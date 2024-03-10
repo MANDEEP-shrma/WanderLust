@@ -1,0 +1,88 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br /><br />
+      <h3>Add your House Today!</h3>
+      <br />
+      <form
+        action="/listings"
+        method="post"
+        novalidate
+        class="needs-validation"
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            name="listing[title]"
+            class="form-control"
+            placeholder="Enter a catchy title"
+            required
+          />
+          <div class="valid-feedback">Looks Good!</div>
+          <div class="invalid-feedback">Please Enter Title</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea
+            name="listing[description]"
+            class="form-control"
+            placeholder="How it feel to live here?"
+            required
+          ></textarea>
+          <div class="valid-feedback">Looks Good!</div>
+          <div class="invalid-feedback">Please Enter Description</div>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input type="file" name="listing[image]" class="form-control" />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+              name="listing[price]"
+              class="form-control"
+              placeholder="1200"
+              required
+            />
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Please Enter Price</div>
+          </div>
+
+          <div class="mb-3 col-md-5">
+            <label for="location" class="form-label">Location</label>
+            <input
+              type="text"
+              name="listing[location]"
+              class="form-control"
+              placeholder="Jaipur,Rajasthan"
+              required
+            />
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Please Enter location</div>
+          </div>
+
+          <div class="mb-3 col-md-3">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              name="listing[country]"
+              class="form-control"
+              placeholder="India"
+              required
+            />
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Please Enter country</div>
+          </div>
+        </div>
+        <br />
+        <button class="btn offset-4 add-btn">Add My House</button>
+        <br /><br />
+      </form>
+    </div>
+  </div>
+</body>
