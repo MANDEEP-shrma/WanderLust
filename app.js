@@ -82,6 +82,10 @@ app.use((req, res, next) => {
   next();
 });
 
+
+app.get("/", (req, res) => {
+  res.render("dashboard");
+});
 app.use("/listings", routeListings); // by this line we can access the routes.listing file
 app.use("/listings/:id/reviews", routeReviews);
 app.use("/", routeUsers);
@@ -89,6 +93,7 @@ app.use("/", routeUsers);
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
 });
+
 
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something Went Wrong" } = err;
