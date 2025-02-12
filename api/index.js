@@ -56,10 +56,10 @@ main()
     console.log(err);
   });
 
-app.use(express.static(path.join(__dirname, "public/JS")));
-app.use(express.static(path.join(__dirname, "public/CSS")));
+app.use(express.static(path.join(__dirname, "../public/JS")));
+app.use(express.static(path.join(__dirname, "../public/CSS")));
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "/views"));
+app.set("views", path.join(__dirname, "../views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
