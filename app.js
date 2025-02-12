@@ -100,6 +100,6 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { message });
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Successfully Working");
 });
